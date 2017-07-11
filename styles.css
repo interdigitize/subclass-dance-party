@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url(src/dancebg.jpg);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +21,15 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border: 10px solid red;
   border-radius:10px;
+  position:absolute;
+}
+
+.groove{
+  position:absolute;
+}
+
+.thankyou{
   position:absolute;
 }
