@@ -6,3 +6,4 @@ var BowCat = function (top, left, timeBetweenSteps) {
 
 BowCat.prototype = Object.create(Dancer.prototype);
 BowCat.prototype.constructor = BowCat;
+

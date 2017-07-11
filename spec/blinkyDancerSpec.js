@@ -1,10 +1,11 @@
 describe('blinkyDancer', function() {
 
-  var blinkyDancer, clock;
-  var timeBetweenSteps = 1000;
+  var blinkyDancer, groovyCat, clock;
+  var timeBetweenSteps = 100;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
+    // groovyCat = new GroovyCat(34, 53, timeBetweenSteps);
     blinkyDancer = new BlinkyDancer(10, 20, timeBetweenSteps);
   });
 
@@ -31,4 +32,10 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
+
+  // it('setPosition is called when a dancer is added', function() {
+  //   Dancer.prototype.setPosition();
+  //   expect(Dancer.prototype.setPosition.called).to.be.true;
+  // });  
+
 });
