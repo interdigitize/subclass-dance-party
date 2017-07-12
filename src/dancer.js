@@ -2,9 +2,6 @@
 var Dancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
 
-  // use jQuery to create an HTML <span> tag
-
-  // Dancer.prototype.step.bind();
   this.step();
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
@@ -20,8 +17,11 @@ Dancer.prototype.step = function() {
     // it just schedules the next step
   var dancer = this;
   setTimeout(dancer.step.bind(dancer), dancer.timeBetweenSteps);
-  $('.thankyou').on('click', function() {
-    $('.thankyou').css('animation-name', 'slideout');
+  $('.exit').on('click', function() {
+    $('.exit').css('animation-name', 'slideout');
+    setTimeout(function() {
+      $('.exit').remove();
+    }, 3000);
   });
   
 };
@@ -38,9 +38,14 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 Dancer.prototype.lineUp = function() {
-  window.dancers.forEach(function(dancer) {
-    console.log(dancer.$node);
-    $(dancer.$node).css('left', '38%');
+  //body width
+  var bodyWidth = $('body').width();
+  //how many dancers
+  var numDancers = window.dancers.length;
+  var spacePerDancer = (bodyWidth - 180) / numDancers;
+  window.dancers.forEach(function(dancer, index) {
+    $(dancer.$node).css('top', '55%');
+    $(dancer.$node).css('left', spacePerDancer * index);
   });
 };
 

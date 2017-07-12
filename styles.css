@@ -3,16 +3,22 @@ body, html{
 }
 body{
   margin: 0px;
-  background-image: url(src/dancebg.jpg);
   font-size: 18px;
+  background: url(src/dancebg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .line-up{
   padding:5px 12px;
   float:right;
 }
+
 .topbar{
   height:32px;
   background-color: #555;
@@ -20,14 +26,31 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+
 .dancer{
-  border: 10px solid red;
-  border-radius:10px;
-  position:absolute;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-bottom-color: rgba(255, 246, 178, 0.4);
+  position: relative;
+  top: -30px;
+}
+.dancer:after {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 52px;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-top-color: rgba(255, 246, 178, 0.4);
 }
 
 .thankyou{
   position:absolute;
+}
+
+.exit {
   animation-duration: 3s;
   animation-name: slidein;
 }
@@ -35,8 +58,8 @@ body, a:link, a:visited, a:active{
 .groove {
   position:absolute;
   display: block;
-  -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
-  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  -webkit-transition: -webkit-transform 2s;
+  transition: transform 2s;
 }
 
 .groove:hover {
@@ -60,12 +83,10 @@ body, a:link, a:visited, a:active{
   from {
     margin-left: 0%;
     width: 300%;
-    opacity: 100%; 
   }
 
   to {
-    margin-left: -100%;
+    margin-left: -200%;
     width: 100%;
-    opacity:0;
   }
 }

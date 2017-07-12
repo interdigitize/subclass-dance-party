@@ -1,5 +1,5 @@
 var GroovyCat = function (top, left, timeBetweenSteps) {
-  this.$node = $('<span class="groove"><img src="src/groove.gif"></span>');
+  this.$node = $('<span class="groove exit"><img src="src/groove.gif" loop="infinite" ></span>');
   Dancer.call(this, top, left, timeBetweenSteps);
   
 };
